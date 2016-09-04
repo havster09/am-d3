@@ -1,0 +1,30 @@
+<style>
+    /*.temperature_cold { background-color: blue; }
+    .temperature_cool { background-color: green; }
+    .temperature_warm { background-color: yellow; }
+    .temperature_hot { background-color: orange; }
+    .temperature_veryhot { background-color: red; }
+    .population_none { font-style: normal; }
+    .population_few { font-weight: normal; }
+    .population_some { font-weight: bold; }
+    .population_many { font-weight: bold; font-size: 150%; }
+    .population_unknown { font-style: italic; }
+    .no_longer_exists { text-decoration: line-through; }
+    .still_exists { text-decoration: none; }
+    .bordered_table { border-style: solid; border-width: 1px; }
+    .bordered_td { border-style: solid; border-width: 1px; }*/
+
+    .locationLabel {
+        /*font-family: arial,helvetica,'sans-serif';*/
+        text-align: left;
+    }
+
+</style>
+<p>{{$ctrl.message}}</p>
+<div id="australia-chart">
+    <svg>
+        <g id="map" />
+        <g id="art" />
+        <g id="labels" />
+    </svg>
+</div>

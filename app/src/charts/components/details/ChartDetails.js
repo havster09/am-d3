@@ -1,4 +1,6 @@
-import ChartDetailsController from './ChartDetailsController'
+"use strict";
+
+import ChartDetailsController from './ChartDetailsController';
 
 export default {
   name : 'chartDetails',

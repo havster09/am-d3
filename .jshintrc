@@ -3,6 +3,7 @@
   "esversion": 6,
   "globals": {
     "d3":true,
+    "topojson":true,
     "console":true,
     "angular": false,
     "describe": false,
