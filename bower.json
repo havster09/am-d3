@@ -1,0 +1,21 @@
+{
+  "name": "material-start",
+  "description": "A ES6 Tutorial project for AngularJS Material Start",
+  "main": "",
+  "authors": [
+    "havster09 <havster09@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/angular/material-start",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.3.13"
+  }
+}
