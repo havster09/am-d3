@@ -8,7 +8,7 @@ class D3AustraliaChartController {
         model.message = "found a thong";
 
         var width = 960,
-            height = 500,
+            height = 600,
             label_text_size_px = 12;
 
         var locations = [
@@ -24,7 +24,7 @@ class D3AustraliaChartController {
 
         var projection = d3.geo.mercator()
             .center([135, -26])
-            .scale(500);
+            .scale(700);
 
         var path = d3.geo.path()
             .projection(projection);
@@ -41,7 +41,7 @@ class D3AustraliaChartController {
         const color = d3.scale.ordinal()
             .range(["#ccebff", "#66c2ff", "#005c99", "#0099ff", "#33adff", "#003d66", "#002e4d"]);
 
-        d3.json("assets/topojson/au-states-topo.json", function(error, data) {
+        /*d3.json("assets/topojson/topo-australia.json", function(error, data) {
             if (error) return console.error(error);
             art.selectAll("path")
                 .data(topojson.feature(data, data.objects.austates).features)
@@ -49,7 +49,32 @@ class D3AustraliaChartController {
                 .attr("d", path)
                 .attr("fill", (d, i) => color(i))
                 .attr("stroke", "#ddd");
-        });
+        });*/
+
+        var dynamicColor;
+
+        d3.json("assets/topojson/topo-au-countries-and-states.json", function(error, data) {
+            if (error) return console.error(error);
+            art.selectAll("path")
+            .data(topojson.feature(data, data.objects.austates).features)
+            .enter().append("path")
+            .attr("d", path)
+            .attr("fill", (d, i) => color(i))
+            .on("mouseover", function (d) {
+                console.log(d);
+                dynamicColor = this.style.fill;
+                d3.select(this)
+                    .style({
+                        "fill": "rgb(255,82,82)"
+                    });
+            })
+                .on("mouseout", function () {
+                    d3.select(this)
+                        .style({
+                            "fill": dynamicColor
+                        });
+                });
+    });
 
         /*var locationPoints = art.selectAll('circle').data(locations);
         var locationLabels = labels.selectAll('foreignObject').data(locations);

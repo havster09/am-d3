@@ -15,6 +15,7 @@ class ChartsListController {
             {name: 'D3 Pie Chart'},
             {name: 'D3 Globe Chart'},
             {name: 'D3 Australia Chart'},
+            {name: 'D3 Us Chart'},
         ];
     }
 }
