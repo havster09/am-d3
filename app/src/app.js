@@ -43,6 +43,7 @@ export default angular.module('starter-app', ['ngMaterial', 'ngComponentRouter',
             {path:"/d3-basic-chart", component: "d3BasicChart", name: 'D3 Basic Chart'},
             {path:"/d3-update-chart", component: "d3UpdateChart", name: 'D3 Update Chart'},
             {path:"/d3-line-chart", component: "d3LineChart", name: 'D3 Line Chart'},
+            {path:"/d3-stacked-chart", component: "d3StackedChart", name: 'D3 Stacked Chart'},
             { path: "/**", redirectTo: ["D3 Bar Chart", ""] }
         ]
     });

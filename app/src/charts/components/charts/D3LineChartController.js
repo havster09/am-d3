@@ -48,40 +48,61 @@ class D3LineChartController {
         d3.tsv("assets/tsv/data.tsv", type, (error, data) => {
            if(error) {throw error;}
 
-           x.domain(d3.extent(data, (d) => d.date));
-           y.domain(d3.extent(data, (d) => d.close));
+            function updateData(data) {
+                x.domain(d3.extent(data, (d) => d.date));
+                y.domain(d3.extent(data, (d) => d.close));
 
-           svg.append("g")
-               .attr({
-                   "class": "x axis",
-                   "transform": `translate(0, ${height})`
-               })
-               .call(xAxis);
+                let axisCollection = svg.selectAll("g")
+                    .data(data, (d) => d);
 
-            svg.append("g")
-                .attr({
-                    "class": "y axis"
-                })
-                .call(yAxis)
-                .append("text")
-                .attr({
-                    "transform": "rotate(-90)",
-                    "y":6,
-                    "dy": ".71em"
-                })
-                .style({
-                    "text-anchor": "end"
-                })
-                .text("Price ($)");
+                let path = svg.selectAll("path")
+                    .data(data, (d) => d);
 
-            svg.append("path")
-                .datum(data)
-                .attr({
-                    "class": "line",
-                    "d": line
-                });
+                axisCollection.exit().remove();
+                path.exit().remove();
+
+                svg.append("g")
+                    .attr({
+                        "class": "x axis",
+                        "transform": `translate(0, ${height})`
+                    })
+                    .call(xAxis);
+
+                svg.append("g")
+                    .attr({
+                        "class": "y axis"
+                    })
+                    .call(yAxis)
+                    .append("text")
+                    .attr({
+                        "transform": "rotate(-90)",
+                        "y":6,
+                        "dy": ".71em"
+                    })
+                    .style({
+                        "text-anchor": "end"
+                    })
+                    .text("Price ($)");
+
+                svg.append("path")
+                    .datum(data)
+                    .attr({
+                        "class": "line",
+                        "d": line
+                    });
+            }
+
+            updateData(data);
+
+            /*const havenInterval = setInterval(() => {
+                updateData(data
+                    .slice(0, Math.floor(Math.random() * 10))
+                );
+            }, 1000);*/
 
         });
+
+
 
 
 

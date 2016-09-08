@@ -11,6 +11,7 @@ import D3UsChart from 'src/charts/components/charts/D3UsChart';
 import D3BasicChart from 'src/charts/components/charts/D3BasicChart';
 import D3UpdateChart from 'src/charts/components/charts/D3UpdateChart';
 import D3LineChart from 'src/charts/components/charts/D3LineChart';
+import D3StackedChart from 'src/charts/components/charts/D3StackedChart';
 
 
 // Define the Angular 'charts' module
@@ -27,5 +28,6 @@ export default angular
   .component(D3UsChart.name, D3UsChart.config)
   .component(D3BasicChart.name, D3BasicChart.config)
   .component(D3UpdateChart.name, D3UpdateChart.config)
-  .component(D3LineChart.name, D3LineChart.config);
+  .component(D3LineChart.name, D3LineChart.config)
+  .component(D3StackedChart.name, D3StackedChart.config);
 
