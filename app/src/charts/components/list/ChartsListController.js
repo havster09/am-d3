@@ -24,6 +24,7 @@ class ChartsListController {
             {name: 'D3 Update Chart'},
             {name: 'D3 Line Chart'},
             {name: 'D3 Stacked Chart'},
+            {name: 'D3 Multi Stacked Chart'},
         ];
     }
 

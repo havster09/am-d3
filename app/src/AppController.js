@@ -7,7 +7,7 @@
 
 "use strict";
 
-/*function AppController(UsersDataService, $mdSidenav) {
+function AppController(UsersDataService, $mdSidenav) {
     var self = this;
 
     self.selected = null;
@@ -38,17 +38,17 @@
     // Internal methods
     // *********************************
 
-    /!**
+    /**
      * Hide or Show the 'left' sideNav area
-     *!/
+     */
     function toggleUsersList() {
         $mdSidenav('left').toggle();
     }
 
-    /!**
+    /**
      * Select the current avatars
      * @param menuId
-     *!/
+     */
     function selectUser(user) {
         self.selected = angular.isNumber(user) ? $scope.users[user] : user;
     }
@@ -58,4 +58,4 @@
     }
 }
 
-export default ['UsersDataService', '$mdSidenav', AppController];*/
+export default ['UsersDataService', '$mdSidenav', AppController];

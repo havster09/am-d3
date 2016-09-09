@@ -10,7 +10,7 @@ import 'ngcomponentrouter';
 import 'angular-ui-router';
 
 
-// import AppController from 'src/AppController';
+import AppController from 'src/AppController';
 
 import Users from 'src/users/Users';
 import Charts from 'src/charts/Charts';
@@ -44,8 +44,8 @@ export default angular.module('starter-app', ['ngMaterial', 'ngComponentRouter',
             {path:"/d3-update-chart", component: "d3UpdateChart", name: 'D3 Update Chart'},
             {path:"/d3-line-chart", component: "d3LineChart", name: 'D3 Line Chart'},
             {path:"/d3-stacked-chart", component: "d3StackedChart", name: 'D3 Stacked Chart'},
+            {path:"/d3-multi-stacked-chart", component: "d3MultiStackedChart", name: 'D3 Multi Stacked Chart'},
             { path: "/**", redirectTo: ["D3 Bar Chart", ""] }
         ]
-    });
-
-    /*.controller('AppController', AppController);*/
+    })
+    .controller('AppController', AppController);
