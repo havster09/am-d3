@@ -102,7 +102,8 @@ class D3GlobeChartController {
             .scale(250)
             .clipAngle(90)
             .precision(0.1)
-            .rotate([0, -30]);
+            .rotate([-134.3156069410817, 25.763175224302056]);
+
 
         path = d3.geo.path()
             .projection(projection);
@@ -186,20 +187,6 @@ class D3GlobeChartController {
                 .tween('rotate', function() {
                     var r = d3.interpolate(projection.rotate(), coords);
                     return function(t) {
-                        console.log(t);
-                        projection.rotate(r(t));
-                        svg.selectAll('path').attr('d', path);
-                    };
-                })
-                .transition();
-        }
-
-        function rotateToCoordinates(coords) {
-            d3.transition()
-                .duration(10)
-                .tween('rotate', function() {
-                    var r = d3.interpolate(projection.rotate(), coords);
-                    return function(t) {
                         projection.rotate(r(t));
                         svg.selectAll('path').attr('d', path);
                     };
@@ -208,7 +195,6 @@ class D3GlobeChartController {
         }
 
         var aus =  [-134.3156069410817, 25.763175224302056];
-        rotateToCoordinates(aus);
     }
 }
 
