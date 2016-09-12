@@ -45,6 +45,7 @@ export default angular.module('starter-app', ['ngMaterial', 'ngComponentRouter',
             {path:"/d3-line-chart", component: "d3LineChart", name: 'D3 Line Chart'},
             {path:"/d3-stacked-chart", component: "d3StackedChart", name: 'D3 Stacked Chart'},
             {path:"/d3-multi-stacked-chart", component: "d3MultiStackedChart", name: 'D3 Multi Stacked Chart'},
+            {path:"/d3-area-transition-chart", component: "d3ConcurrentTransitionChart", name: 'D3 Concurrent Transition Chart'},
             { path: "/**", redirectTo: ["D3 Bar Chart", ""] }
         ]
     })

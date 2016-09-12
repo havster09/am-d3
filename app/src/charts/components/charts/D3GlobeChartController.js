@@ -89,7 +89,7 @@ class D3GlobeChartController {
         // Configuration for the spinning effect
         var time = Date.now();
         var rotate = [0, 0];
-        var velocity = [.015, -0];
+        var velocity = [0.015, -0];
 
         var width = 500, height = width,
             projection, path,
@@ -166,6 +166,8 @@ class D3GlobeChartController {
                     var val = (data[d.id]) ? data[d.id] : 0;
                     d3.select('.globe-wrapper .info').html(d.properties.name + ': ' + val);
 
+                    console.log(d);
+
                     rotateToFocusOn(d);
                 });
 
@@ -177,8 +179,24 @@ class D3GlobeChartController {
             coords[0] = -coords[0];
             coords[1] = -coords[1];
 
+            console.log(coords);
+
             d3.transition()
                 .duration(1250)
+                .tween('rotate', function() {
+                    var r = d3.interpolate(projection.rotate(), coords);
+                    return function(t) {
+                        console.log(t);
+                        projection.rotate(r(t));
+                        svg.selectAll('path').attr('d', path);
+                    };
+                })
+                .transition();
+        }
+
+        function rotateToCoordinates(coords) {
+            d3.transition()
+                .duration(10)
                 .tween('rotate', function() {
                     var r = d3.interpolate(projection.rotate(), coords);
                     return function(t) {
@@ -188,6 +206,9 @@ class D3GlobeChartController {
                 })
                 .transition();
         }
+
+        var aus =  [-134.3156069410817, 25.763175224302056];
+        rotateToCoordinates(aus);
     }
 }
 
