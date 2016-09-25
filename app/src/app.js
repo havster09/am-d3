@@ -38,7 +38,9 @@ export default angular.module('starter-app', ['ngMaterial', 'ngComponentRouter',
             {path:"/d3-bar-chart", component: "d3BarChart", name: "D3 Bar Chart", useAsDefault: true},
             {path:"/d3-pie-chart", component: "d3PieChart", name: 'D3 Pie Chart'},
             {path:"/d3-globe-chart", component: "d3GlobeChart", name: 'D3 Globe Chart'},
+            {path:"/d3-world-map-chart", component: "d3WorldMapChart", name: 'D3 World Map Chart'},
             {path:"/d3-australia-chart", component: "d3AustraliaChart", name: 'D3 Australia Chart'},
+            {path:"/d3-australia-gnm-chart", component: "d3AustraliaGnmChart", name: 'D3 Australia Gnm Chart'},
             {path:"/d3-us-chart", component: "d3UsChart", name: 'D3 Us Chart'},
             {path:"/d3-basic-chart", component: "d3BasicChart", name: 'D3 Basic Chart'},
             {path:"/d3-update-chart", component: "d3UpdateChart", name: 'D3 Update Chart'},
@@ -46,6 +48,7 @@ export default angular.module('starter-app', ['ngMaterial', 'ngComponentRouter',
             {path:"/d3-stacked-chart", component: "d3StackedChart", name: 'D3 Stacked Chart'},
             {path:"/d3-multi-stacked-chart", component: "d3MultiStackedChart", name: 'D3 Multi Stacked Chart'},
             {path:"/d3-area-transition-chart", component: "d3ConcurrentTransitionChart", name: 'D3 Concurrent Transition Chart'},
+            {path:"/d3-brushing-chart", component: "d3BrushingChart", name: 'D3 Brushing Chart'},
             { path: "/**", redirectTo: ["D3 Bar Chart", ""] }
         ]
     })

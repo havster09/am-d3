@@ -3,6 +3,10 @@
   "esversion": 6,
   "globals": {
     "d3":true,
+    "document":true,
+    "window":true,
+    "self":true,
+    "queue":true,
     "colorbrewer":true,
     "topojson":true,
     "console":true,
