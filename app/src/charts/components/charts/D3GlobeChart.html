@@ -19,29 +19,45 @@
         stroke-width: .5px;
     }
 
-    .country {
+    .country, .state {
         cursor: pointer;
     }
 
     .country .land, .state .land {
-        fill: white;
+        fill: #f0f0f0;
         stroke: rgba(0,0,0, .2);
-        stroke-width .3px;
+        stroke-width: .3px;
     }
 
     .state .overlay {
-        fill: blue;
-        fill-opacity: 0;
+        fill: #FC0;
+        fill-opacity: .5;
+    }
+
+    .bubble {
+        fill: white;
+        fill-opacity: .5;
+        stroke-width: .5px;
+        stroke: #000;
+        cursor: pointer;
+    }
+
+    .bubble :hover {
+        fill: grey;
+        stroke: #000;
+        fill-opacity: 1;
+        stroke-width: 1px;
     }
 
     .country .overlay {
-        fill: orange;
-        fill-opacity: 0;
+        fill: #FC0;
+        fill-opacity: .2;
     }
+
 </style>
 <p>{{$ctrl.message}}</p>
 
 <div class="globe-wrapper">
-    <div class="globe"><!-- D3 Globe will go here --></div>
-    <div class="info"><!-- Text based information will go here --></div>
+    <div class="globe"></div>
+    <div class="info"></div>
     </div>
